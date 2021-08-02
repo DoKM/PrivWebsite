@@ -1,0 +1,22 @@
+{
+  "name": "titlebarscroll",
+  "version": "1.0.0",
+  "description": "",
+  "main": "TitleBarScroll.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "compilerOptions": {
+    "outDir": "../public/js/modules"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    
+    "typescript": "^4.1.5"
+  },
+  "devDependencies": {
+    "plyr": "^3.6.4",
+    "@types/es6-promise": "^3.3.0"
+  }
+}

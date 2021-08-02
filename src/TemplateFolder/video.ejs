@@ -1,0 +1,98 @@
+
+<!-- random video chooser -->
+
+<video loop="" id="video-background" >
+</video>
+
+<script>
+
+    function start() {
+
+        videoPlayer.addEventListener('ended', playIt, false);
+        videoPlayer.volume = 0.05;
+        // Not all browsers return promise from .play().
+        sourceSetter();
+
+
+        const playPromise = videoPlayer.play() || Promise.reject('');
+        if(playPromise !== undefined) {
+            playPromise.then(() => {
+                // Video could be autoplayed, do nothing.
+
+
+
+            }).catch(err => {
+                // Video couldn't be autoplayed because of autoplay policy. Mute it and play.
+
+
+                videoPlayer.muted = true;
+                window.addEventListener('click', unmute);
+
+                const playPromise2 = videoPlayer.play() || Promise.reject('');
+                if(playPromise2 !== undefined) {
+                    playPromise2.then(() => {
+                        // Video could be autoplayed, do nothing.
+
+
+                    }).catch(err => {
+                        // Video couldn't be autoplayed because of autoplay policy. Mute it and play.
+
+
+                        alert('use a different browse please');
+                        videoPlayer.play();
+
+                    });
+                }
+            });
+        }
+
+    }
+
+    function unmute(){
+
+        videoPlayer.muted = false;
+        window.removeEventListener('click', unmute);
+
+    }
+
+    function playIt(){
+
+        sourceSetter();
+        videoPlayer.play();
+    }
+
+    function sourceSetter() {
+        let source = document.getElementById('videoSource');
+            const videos = [
+                "smokey",
+                "smokey2",
+                "smokey3",
+                "smokey4",
+                "smokey5",
+                "smokey6",
+                "smokey7",
+                "smokey8",
+                "smokey9",
+                "smokey10",
+                "smokey12",
+
+            ];
+
+            let videos1 = videos[Math.floor(Math.random() * videos.length)];
+
+            videoPlayer.src = "/videos/" + videos1 + ".mp4";
+
+        //source.src = "http://techslides.com/demos/sample-videos/small.mp4"
+
+        // console.log(source.src);
+            // videoPlayer.src = "/videos/" + videos1 + ".mp4";
+
+    }
+
+
+    const videoPlayer = document.getElementById('video-background');
+    window.addEventListener('load', start)
+</script>
+
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>DoKM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/public/css/style.css"
+    />
+    
+    <script type="module" src="/public/js/TitleBar.js"></script>
+    <script src="https://kit.fontawesome.com/96f737e25b.js" crossorigin="anonymous"></script>
+    {% block header %}
+      
+    {% endblock %}
+    
+  </head>
+  <body>
+    {% from "video.blade.html" import videoLoader %}
+    {{ videoLoader(video) }}
+    
+    <div class="overlay width-max height-max">
+        <div class="center-horizontally">
+          {% block content %}
+      
+          {% endblock %}
+        </div>
+    </div>
+  </body>
+</html>

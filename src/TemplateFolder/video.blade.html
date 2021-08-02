@@ -1,0 +1,19 @@
+{% macro videoLoader(video="rWq-IUBmDGo") %}
+<div class="video-background">
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.6.4/plyr.css" />
+  <link rel=stylesheet href=/public/css/video.css>
+  <script src="https://cdn.plyr.io/3.6.4/plyr.js"></script>
+  <script type="module" src="/public/js/VideoPlayerBackground.js"></script>
+  
+  <div class="plyr__video-embed player" id="player">
+    <iframe
+      src="https://www.youtube.com/embed/{{ video }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+      allow="autoplay"
+      allowfullscreen
+      allowtransparency
+      controls="false"
+      style="pointer-events: none;"
+    ></iframe>
+  </div>
+</div>
+{% endmacro %}
