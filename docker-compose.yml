@@ -11,4 +11,6 @@ services:
     volumes:
       - ./:/app
     tty: true
-    restart: always  
+    restart: always
+    networks:
+      - nginx_network
