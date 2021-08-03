@@ -1,30 +1,27 @@
-// @deno-types="https://github.com/lumeland/denjucks/raw/master/mod.d.ts"
-import denjucks from "https://github.com/lumeland/denjucks/raw/master/mod.js";
-import { dirname, join } from "https://deno.land/x/opine@1.3.2/deps.ts";
-import { opine, serveStatic } from "https://deno.land/x/opine@1.3.2/mod.ts";
+const express = require('express')
+const app = express()
+const nunjucks = require('nunjucks')
 
-import { videoList } from "../public/js/VidoesList.js"
-
+import { videoList } from '../public/js/VidoesList.js'
 
 const port = 8080
-const __dirname = dirname(import.meta.url);
-const app = opine();
-denjucks.configure(`${Deno.cwd()}/src/TemplateFolder`, { autoescape: true,
-  });
 
 
+const env = nunjucks.configure(`${__dirname}/TemplateFolder`, { autoescape: true, });
+env.express(app);
 
-app.use("/public", serveStatic(join(__dirname, "../public")));
 
-app.get("/", async function(req, res) {
-  res.body = await denjucks.render(`index.blade.html`, {video: videoList[Math.floor(Math.random() * videoList.length)]})
-  res.status = 200
-  res.send();
+app.use("/public", express.static("public"));
+
+app.get(["/", "/index.html","index"], async function(req:any, res:any) {
+  
+  res.render(`index.blade.html`, {video: videoList[Math.floor(Math.random() * videoList.length)]})
+
 });
 
 
 
-app.listen(8080);
+app.listen(port);
   
 console.log(`listening on localhost:${port}`)
 

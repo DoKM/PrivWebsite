@@ -1,0 +1,29 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Website",
+  "main": "./src/app.ts",
+  "dependencies": {
+    "atob": "^2.1.2",
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.3",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.10"
+  },
+  "scripts": {
+    "run": "ts-node ./src/app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoKM/PrivWebsite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoKM/PrivWebsite/issues"
+  },
+  "homepage": "https://github.com/DoKM/PrivWebsite#readme"
+}

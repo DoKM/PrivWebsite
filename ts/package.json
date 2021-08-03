@@ -4,7 +4,7 @@
   "description": "",
   "main": "TitleBarScroll.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "echo \"Error: no test specified\" && exit 1"
   },
   "compilerOptions": {
     "outDir": "../public/js/modules"
