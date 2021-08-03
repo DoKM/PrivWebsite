@@ -12,5 +12,5 @@ COPY . .
 
 EXPOSE 8080
 
-CMD [ "run", "webserver" ]
+CMD [ "ts-node", "./src/app.ts" ]
 
