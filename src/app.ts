@@ -16,7 +16,7 @@ denjucks.configure(`${Deno.cwd()}/src/TemplateFolder`, { autoescape: true,
 
 app.use("/public", serveStatic(join(__dirname, "../public")));
 
-app.get("/", async function(req, res) {
+app.get(["/", "/index.html","index"], async function(req, res) {
   res.body = await denjucks.render(`index.blade.html`, {video: videoList[Math.floor(Math.random() * videoList.length)]})
   res.status = 200
   res.send();

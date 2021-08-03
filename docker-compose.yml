@@ -1,0 +1,15 @@
+version: "3.9"
+networks:
+    nginx_network:
+      external: true
+   
+services:
+  deno:
+    build:
+        context: .
+
+    volumes:
+        - ./:/app
+    networks:
+       - nginx_network
+    
