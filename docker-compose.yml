@@ -4,11 +4,11 @@ networks:
       external: true
    
 services:
-  deno:
-    build:
-        context: .
+  node:
+    working_dir: /app
+    build: .
+    container_name: website
     volumes:
-        - ./:/app
-    networks:
-       - nginx_network
-    
+      - ./:/app
+    tty: true
+    restart: always  

@@ -8,13 +8,14 @@
     "express": "^4.17.1",
     "nunjucks": "^3.2.3",
     "ts-node": "^10.1.0",
-    "typescript": "^4.3.5"
-  },
-  "devDependencies": {
+    "typescript": "^4.3.5",
     "@types/node": "^16.4.10"
   },
+  "devDependencies": {
+    
+  },
   "scripts": {
-    "run": "ts-node ./src/app.ts"
+    "webserver": "ts-node ./src/app.ts"
   },
   "repository": {
     "type": "git",
