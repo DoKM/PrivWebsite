@@ -11,6 +11,7 @@
   "devDependencies": {
     
   },
+  "type": "module",
   "scripts": {
     "start": "node ./src/app.js"
   },

@@ -1,8 +1,15 @@
-const express = require('express')
+//const express = require('express')
+import express from 'express';
 const app = express()
-const nunjucks = require('nunjucks')
+//const nunjucks = require('nunjucks')
+import nunjucks from "nunjucks"
 
 import { videoList } from '../public/js/VidoesList.js'
+
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const port = 8080
 
