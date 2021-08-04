@@ -13,7 +13,7 @@ env.express(app);
 
 app.use("/public", express.static("public"));
 
-app.get(["/", "/index.html","index"], async function(req:any, res:any) {
+app.get(["/", "/index.html","index"], async function(req, res) {
   
   res.render(`index.blade.html`, {video: videoList[Math.floor(Math.random() * videoList.length)]})
 
